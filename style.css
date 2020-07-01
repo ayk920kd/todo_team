@@ -91,15 +91,15 @@ button {
 .btn-wrapper {
   display: flex;
   justify-content: flex-end;
+}
 
 header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: navy;
-    color: white;
+    color:white;
     padding: 1%;
-   
 }
 main{
     margin: 5%;
