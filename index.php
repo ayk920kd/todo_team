@@ -1,5 +1,12 @@
 <?php
 
+require_once('Model/Task.php');
+require_once('function.php');
+
+$task = new Task();
+$tasks = $task->getAll();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +24,7 @@
         <a href="create.php" class="header_right">CREATE</a>
     </header>
     <main>
+      <?php foreach($tasks as $task) : ?>
         <!-- タスクのカード -->
        <div class="card">
            <div class="card_image">
@@ -25,13 +33,13 @@
            <div class="card_body">
                <ul>
                    <!-- <li><span>ここにタイトル</span></li> -->
-                   <li>Title:<span></span></li>
+                   <li>Title:<?php echo h($task['title']); ?></li>
                    <!-- <li><span>ここにコンテンツ</span></li> -->
-                   <li>Contents:<span></span></li>
+                   <li>Contents:<span><?php echo h($task['contents']); ?></span></li>
                    <!-- <li><span>ここに締め切り</span></li> -->
-                   <li>Deadline:<span></span></li>
+                   <li>Deadline:<span><?php echo h($task['deadline']); ?></span></li>
                    <!-- <li><span>ここにタスク種類</span></li> -->
-                   <li>Type:<span></span></li>
+                   <li>Type:<span><?php echo h($task['type']); ?></span></li>
                </ul>
            </div>
            <div class="card_footer">
@@ -39,6 +47,7 @@
                <button class="delete">DELETE</button>
            </div>
        </div>
+      <?php endforeach; ?>
     </main>
 </body>
 </html>

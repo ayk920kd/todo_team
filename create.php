@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>create</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,18 +20,18 @@
     <div class=create-form-wrapper>
         <h1>NEW POST</h1>
         <div class="form-wrapper">
-            <form class="container" action="store.php">
+            <form class="container" action="store.php" method="post">
                 <div class="form-box">
                     <p>Title</p>
-                    <input type="text" class="">
+                    <input type="text" name="title">
                 </div>
                 <div class="form-box">
                     <p>Contents</p>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="contents" id="" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-box">
                     <p>Deadline</p>
-                    <input type="date">
+                    <input type="date" name="deadline">
                 </div>
                 <div class="form-box">
                     <p>Type</p>
@@ -43,7 +43,7 @@
                     </select>
                 </div>
                 <div class="btn-wrapper">
-                    <button>CREATE</button>
+                    <button type="submit">CREATE</button>
                 </div>
             </form>
         </div>
