@@ -22,4 +22,8 @@ class Task extends Model
     }
     // * update()を以下に追加する
     // * (findByTitle()を以下に追加する)
+    public function update($data){
+        $stmt = $this->db_manager->dbh->prepare('UPDATE ' . $this->table. ' SET title = ?, contents = ?, deadline = ?, type = ? WHERE id = ?');
+        $stmt->execute($data);
+    }
 }
