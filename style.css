@@ -29,20 +29,10 @@
   margin: 0 auto;
   padding: 40px;
 }
-
 @media screen and (max-width: 900px) {
   .container {
     width: 60%;
     padding: 40px;
-  }
-  .form-box input {
-    width: 200px;
-  }
-  .form-box textarea {
-    width: 300px;
-  }
-  .form-box select {
-    width: 100px;
   }
 }
 
