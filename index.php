@@ -43,7 +43,8 @@ $tasks = $task->getAll();
                </ul>
            </div>
            <div class="card_footer">
-               <button class="edit">EDIT</button>
+               <a href="edit.php?id=<?php echo h($task['id']); ?>" class="edit">EDIT</a>
+               <!-- <buttonclass="edit">EDIT</buttonclass=> -->
                <button class="delete">DELETE</button>
            </div>
        </div>

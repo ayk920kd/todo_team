@@ -1,5 +1,9 @@
 <?php
-
+    require_once('Model/Task.php');
+    require_once('function.php');
+   
+    $id = $_GET['id'];
+    $task = (new Task())->findById($id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,22 +21,24 @@
     <div class=create-form-wrapper>
         <h1>NEW POST</h1>
         <div class="form-wrapper">
-            <form class="container" action="store.php">
+            <form action="updata.php" class="container"  method="post">
                 <div class="form-box">
                     <p>Title</p>
-                    <input type="text" class="">
+                    <input type="text" name="title" id="title" value="<?= h($task['title']); ?>">
                 </div>
                 <div class="form-box">
                     <p>Contents</p>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="contents" id="contents"><?= h($task['contents']); ?></textarea>
                 </div>
                 <div class="form-box">
                     <p>Deadline</p>
-                    <input type="date">
+                    <input type="date" name="deadline" id="deadline">
+                    <?= h($task['deadline']); ?>
+                 
                 </div>
                 <div class="form-box">
                     <p>Type</p>
-                    <select name="type" id="">
+                    <select name="type" id="type">
                         <option value="selected" selected>なし</option>
                         <option value="school">学校</option>
                         <option value="job">仕事</option>
@@ -40,7 +46,8 @@
                     </select>
                 </div>
                 <div class="btn-wrapper">
-                    <button>UPDATE</button>
+                    <input type="hidden" name="id" value="<?= h($task['id']); ?>">
+                    <button type="submit" ac>UPDATE</button>
                 </div>
             </form>
         </div>
