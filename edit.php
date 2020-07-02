@@ -1,18 +1,15 @@
 <?php
+
     require_once('Model/Task.php');
     require_once('function.php');
    
     $id = $_GET['id'];
     $task = (new Task())->findById($id);
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>To do app</title>
-</head>
+
+<?php include('template.php'); ?>
+
 <body>
     <?php include('header.php');?>
     <div class=create-form-wrapper>
@@ -29,14 +26,12 @@
                 </div>
                 <div class="form-box">
                     <p>Deadline</p>
-                    <input type="date" name="deadline" id="deadline">
-                    <?= h($task['deadline']); ?>
-                 
+                    <input type="date" name="deadline" id="deadline" value="<?= h($task['deadline']); ?>">
                 </div>
                 <div class="form-box">
                     <p>Type</p>
-                    <select name="type" id="type">
-                        <option value="selected" selected>なし</option>
+                    <select name="type" id="test" value="<?= h($task['type']); ?>">
+                        <option value="selected">なし</option>
                         <option value="school">学校</option>
                         <option value="job">仕事</option>
                         <option value="house_work">家事</option>

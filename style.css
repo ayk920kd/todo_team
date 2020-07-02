@@ -16,7 +16,7 @@
 }
 @media screen and (max-width: 900px) {
   .create-form-wrapper h1 {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 
@@ -26,7 +26,6 @@
 
 .container {
   border: 5px solid rgb(2, 2, 128);
-  background-color: white;
   width: 40%;
   margin: 0 auto;
   padding: 40px;
@@ -40,7 +39,7 @@
 
 
 .form-box {
-  padding: 0 0 10px 30px;
+  padding: 0 0 10px 20px;
 }
 
 .form-box p {
@@ -50,33 +49,18 @@
 }
 
 .form-box input {
-  width: 450px;
+  width: 80%;
   margin-left: 30px;
-}
-@media screen and (max-width: 900px) {
-  .form-box input {
-    width: 300px;
-  }
 }
 
 .form-box textarea {
-  width: 450px;
+  width: 80%;
   margin-left: 30px;
-}
-@media screen and (max-width: 900px) {
-  .form-box textarea {
-    width: 300px;
-  }
 }
 
 .form-box select {
-  width: 250px;
+  width: 30%;
   margin-left: 30px;
-}
-@media screen and (max-width: 900px) {
-  .form-box select {
-    width: 100px;
-  }
 }
 
 button {

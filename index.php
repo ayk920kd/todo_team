@@ -1,23 +1,15 @@
 <?php
 
-require_once('Model/Task.php');
-require_once('function.php');
+    require_once('Model/Task.php');
+    require_once('function.php');
 
-$task = new Task();
-$tasks = $task->getAll();
-
+    $task = new Task();
+    $tasks = $task->getAll();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <title>To do app</title>
-</head>
+<?php include('template.php'); ?>
+
 <body>
     <?php include('header.php');?>
     <main>
@@ -29,21 +21,15 @@ $tasks = $task->getAll();
            </div>
            <div class="card_body">
                <ul>
-                   <!-- <li><span>ここにタイトル</span></li> -->
                    <li>Title:<?php echo h($task['title']); ?></li>
-                   <!-- <li><span>ここにコンテンツ</span></li> -->
                    <li>Contents:<span><?php echo h($task['contents']); ?></span></li>
-                   <!-- <li><span>ここに締め切り</span></li> -->
                    <li>Deadline:<span><?php echo h($task['deadline']); ?></span></li>
-                   <!-- <li><span>ここにタスク種類</span></li> -->
                    <li>Type:<span><?php echo h($task['type']); ?></span></li>
                </ul>
            </div>
            <div class="card_footer">
                <a href="edit.php?id=<?php echo h($task['id']); ?>" class="edit">EDIT</a>
-               <!-- <buttonclass="edit">EDIT</buttonclass=> -->
                <a href="delete.php?id=<?php echo h($task['id']); ?>" class="delete">DELETE</a>
-               <!-- <button class="delete">DELETE</button> -->
            </div>
        </div>
       <?php endforeach; ?>
