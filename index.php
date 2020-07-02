@@ -21,7 +21,7 @@
            </div>
            <div class="card_body">
                <ul>
-                   <li>Title:<?php echo h($task['title']); ?></li>
+                   <li>Title:<span><?php echo h($task['title']); ?></span></li>
                    <li>Contents:<span><?php echo h($task['contents']); ?></span></li>
                    <li>Deadline:<span><?php echo h($task['deadline']); ?></span></li>
                    <li>Type:<span><?php echo h($task['type']); ?></span></li>
