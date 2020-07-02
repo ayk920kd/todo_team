@@ -4,8 +4,8 @@ require_once('Model/Task.php');
 
 $title = $_POST['title'];
 $contents = $_POST['contents'];
-$contents = $_POST['deadline'];
-$contents = $_POST['type'];
+$deadline = $_POST['deadline'];
+$type = $_POST['type'];
 $id = $_POST['id'];
 
 $task = new Task();
